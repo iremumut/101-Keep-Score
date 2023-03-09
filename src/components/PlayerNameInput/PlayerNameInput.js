@@ -1,13 +1,24 @@
 import {View, Text} from 'react-native';
-import React from 'react';
+import React, {useContext} from 'react';
 import styles from './PlayerNameInput.style';
 import {TextInput} from 'react-native';
+import {ScoreContext} from '../../context/scoreContext';
 
-const PlayerNameInput = () => {
+const PlayerNameInput = ({initialName, playerNumber}) => {
+  const {changePlayerName} = useContext(ScoreContext);
+
   return (
-    <View style={styles.InputContainer}>
-      <TextInput style={styles.InputText} />
-    </View>
+    <ScoreContext.Consumer>
+      {() => (
+        <View style={styles.InputContainer}>
+          <TextInput
+            style={styles.InputText}
+            value={initialName}
+            onChangeText={e => changePlayerName(playerNumber, e)}
+          />
+        </View>
+      )}
+    </ScoreContext.Consumer>
   );
 };
 

@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import AppStyles from '../../constants/AppStyles';
 
 export default styles = StyleSheet.create({
   container: {
@@ -12,7 +13,7 @@ export default styles = StyleSheet.create({
     fontWeight: '400',
     fontSize: 25,
     letterSpacing: 0.1,
-    color: '#FFFFFF',
+    color: AppStyles.color.white,
     marginBottom: '5%',
   },
   partnerSection: {
@@ -26,10 +27,21 @@ export default styles = StyleSheet.create({
     fontWeight: '400',
     fontSize: 18,
     letterSpacing: 0.01,
-    color: '#FFFFFF',
+    color: AppStyles.color.white,
     marginRight: '5%',
   },
   nameInputSection: {
     //marginVertical: '10%',
+  },
+  partnersInputSection: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  partnersInputsList: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: '5%',
   },
 });

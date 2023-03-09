@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import AppStyles from '../../constants/AppStyles';
 
 export default styles = StyleSheet.create({
   container: {
@@ -10,7 +11,7 @@ export default styles = StyleSheet.create({
     fontStyle: 'normal',
     fontSize: 70,
     lineHeight: 100,
-    color: '#FFFFFF',
+    color: AppStyles.color.white,
     marginTop: '20%',
     letterSpacing: 0.1,
     paddingHorizontal: '25%',
@@ -28,16 +29,16 @@ export default styles = StyleSheet.create({
   startButtonBorder: {
     width: '100%',
     borderBottomWidth: 2,
-    borderBottomColor: '#FFFFFF',
+    borderBottomColor: AppStyles.color.white,
     flex: 0.2,
-    shadowColor: '#FFFFFF',
+    shadowColor: AppStyles.color.white,
     shadowOffset: {width: 0, height: 5},
     shadowOpacity: 0.8,
     shadowRadius: 2,
     elevation: 5,
   },
   startButtonText: {
-    color: '#FFFFFF',
+    color: AppStyles.color.white,
     fontFamily: 'ReadexPro-Regular',
     fontStyle: 'normal',
     fontWeight: '400',

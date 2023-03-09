@@ -1,13 +1,15 @@
 import {StyleSheet} from 'react-native';
+import AppStyles from '../../constants/AppStyles';
 
 export default styles = StyleSheet.create({
   InputContainer: {
-    borderColor: '#D0BEBA',
+    borderColor: AppStyles.color.eggshell,
     borderWidth: 0.58,
     borderRadius: 25,
     height: 50,
     paddingVertical: 6,
     paddingHorizontal: 18,
+    marginVertical: '5%',
     /*shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -23,7 +25,7 @@ export default styles = StyleSheet.create({
     fontWeight: '400',
     fontSize: 15,
     letterSpacing: 0.01,
-    color: '#FFFFFF',
+    color: AppStyles.color.white,
     textAlign: 'center',
   },
 });

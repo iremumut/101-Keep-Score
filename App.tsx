@@ -9,21 +9,24 @@ import HomeScreen from './src/screens/HomeScreen/HomeScreen';
 import InformationScreen from './src/screens/InformationScreen/InformationScreen';
 import ScoreScreen from './src/screens/ScoreScreen/ScoreScreen';
 import ResultScreen from './src/screens/ResultScreen/ResultScreen';
+import {ContextProvider} from './src/context/scoreContext';
 
 const Stack = createNativeStackNavigator();
 
 function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName="Home"
-        screenOptions={{headerShown: false}}>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Information" component={InformationScreen} />
-        <Stack.Screen name="Score" component={ScoreScreen} />
-        <Stack.Screen name="Result" component={ResultScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <ContextProvider>
+      <NavigationContainer>
+        <Stack.Navigator
+          initialRouteName="Home"
+          screenOptions={{headerShown: false}}>
+          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="Information" component={InformationScreen} />
+          <Stack.Screen name="Score" component={ScoreScreen} />
+          <Stack.Screen name="Result" component={ResultScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </ContextProvider>
   );
 }
 
