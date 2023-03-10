@@ -3,15 +3,15 @@ import React, {createContext, useState} from 'react';
 export const ScoreContext = createContext();
 
 export const ContextProvider = props => {
-  const [playerCount, setPlayerCount] = useState(6);
+  const [playerCount, setPlayerCount] = useState(4);
 
   const [playerNames, setPlayerNames] = useState([
     'Player #1',
     'Player #2',
     'Player #3',
     'Player #4',
-    'Player #5',
-    'Player #6',
+    /*'Player #5',
+    'Player #6',*/
   ]);
 
   const [isPartners, setIsPartners] = useState(false);
@@ -35,12 +35,11 @@ export const ContextProvider = props => {
     if (!isPartners && playerCount % 2 !== 0) {
       return;
     }
-    /*names = [
-      {...playerNames.slice(0, playerCount / 2)},
-      {...playerNames.slice(playerCount / 2, playerCount)},
-    ];
-    setPlayerNames(names);*/
     setIsPartners(!isPartners);
+  };
+
+  const getPlayerName = playerNumber => {
+    return toString(playerNames[playerNumber]);
   };
 
   return (
@@ -53,6 +52,7 @@ export const ContextProvider = props => {
         changePlayerName,
         isPartners,
         changePartners,
+        getPlayerName,
       }}>
       {props.children}
     </ScoreContext.Provider>

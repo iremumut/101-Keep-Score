@@ -13,6 +13,7 @@ import {
   IconCheckboxChecked,
   IconCheckboxEmpty,
   IconTwoArrows,
+  IconArrowRight,
 } from '../../assets/icons';
 import BackgroundContainer from '../../components/BackgroundContainer/BackgroundContainer';
 import PlayerNameInput from '../../components/PlayerNameInput/PlayerNameInput';
@@ -30,8 +31,7 @@ const InformationScreen = ({navigation}) => {
   useEffect(() => {
     if (isPartners) {
       const names = [];
-      console.log(playerNames);
-      for (let i = 0; i < playerCount - 2; i + 2) {
+      for (let i = 0; i <= playerCount - 2; i = i + 2) {
         const item = {
           firstPlayer: {index: i, name: playerNames[i]},
           secondPlayer: {index: i + 1, name: playerNames[i + 1]},
@@ -39,9 +39,8 @@ const InformationScreen = ({navigation}) => {
         names.push(item);
       }
       setPartnerNameList(names);
-      console.log(names);
     }
-  }, [isPartners]);
+  }, [isPartners, playerNames]);
 
   return (
     <ScoreContext.Consumer>
@@ -69,32 +68,32 @@ const InformationScreen = ({navigation}) => {
                     )}
                   />
                 ) : (
-                  {
-                    /*<View style={styles.partnersInputSection}>
-                    <FlatList
-                      data={partnerNameList}
-                      keyExtractor={x => uuid.v4()}
-                      renderItem={({item}) => (
-                        <View style={styles.partnersInputsList}>
-                          {console.log(x)}
-                          <PlayerNameInput
-                            initialName={item.firstPlayer.name}
-                            playerNumber={item.firstPlayer.index}
-                          />
-                          <IconTwoArrows />
-                          <PlayerNameInput
-                            initialName={item.secondPlayer.name}
-                            playerNumber={item.secondPlayer.index}
-                          />
-                        </View>
-                      )}
-                    />
-                      </View>*/
-                  }
+                  <FlatList
+                    data={partnerNameList}
+                    keyExtractor={x => uuid.v4()}
+                    renderItem={({item}) => (
+                      <View style={styles.partnersInputsList}>
+                        <PlayerNameInput
+                          initialName={item.firstPlayer.name}
+                          playerNumber={item.firstPlayer.index}
+                        />
+                        <IconTwoArrows />
+                        <PlayerNameInput
+                          initialName={item.secondPlayer.name}
+                          playerNumber={item.secondPlayer.index}
+                        />
+                      </View>
+                    )}
+                  />
                 )}
               </View>
             </View>
-            <Button onPress={() => navigation.push('Score')} title="Score" />
+            <TouchableOpacity
+              style={styles.nextButton}
+              onPress={() => navigation.push('Score')}>
+              <Text style={styles.nextButtonText}>Next</Text>
+              <IconArrowRight />
+            </TouchableOpacity>
           </BackgroundContainer>
         </View>
       )}

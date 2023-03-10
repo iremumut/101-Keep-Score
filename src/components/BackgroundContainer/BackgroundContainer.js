@@ -1,4 +1,10 @@
-import {View, Text, ImageBackground} from 'react-native';
+import {
+  View,
+  Text,
+  ImageBackground,
+  SafeAreaView,
+  KeyboardAvoidingView,
+} from 'react-native';
 import React from 'react';
 import styles from './BackgroundContainer.style';
 
@@ -8,7 +14,11 @@ const BackgroundContainer = ({background, children}) => {
       source={background}
       resizeMode="cover"
       style={styles.background}>
-      {children}
+      <SafeAreaView style={styles.background}>
+        <KeyboardAvoidingView style={styles.background}>
+          {children}
+        </KeyboardAvoidingView>
+      </SafeAreaView>
     </ImageBackground>
   );
 };

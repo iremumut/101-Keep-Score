@@ -6,7 +6,9 @@ export default styles = StyleSheet.create({
     flex: 1,
   },
   contentContainer: {
-    marginTop: '25%',
+    marginVertical: '30%',
+    marginHorizontal: '15%',
+    flex: 1,
   },
   title: {
     fontFamily: 'ReadexPro-Regular',
@@ -15,11 +17,13 @@ export default styles = StyleSheet.create({
     letterSpacing: 0.1,
     color: AppStyles.color.white,
     marginBottom: '5%',
+    width: '100%',
+    textAlign: 'center',
   },
   partnerSection: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginVertical: '5%',
+    marginVertical: '15%',
   },
   partnerSectionText: {
     fontFamily: 'ReadexPro-Regular',
@@ -31,7 +35,8 @@ export default styles = StyleSheet.create({
     marginRight: '5%',
   },
   nameInputSection: {
-    //marginVertical: '10%',
+    flex: 1,
+    //marginTop: '20%',
   },
   partnersInputSection: {
     flexDirection: 'row',
@@ -42,6 +47,21 @@ export default styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
+    flex: 1,
     marginVertical: '5%',
+  },
+  nextButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    position: 'absolute',
+    bottom: '5%',
+    right: '5%',
+  },
+  nextButtonText: {
+    color: AppStyles.color.white,
+    fontFamily: 'ReadexPro-Regular',
+    fontStyle: 'normal',
+    fontWeight: '400',
+    fontSize: 18,
   },
 });
