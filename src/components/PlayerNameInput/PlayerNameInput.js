@@ -15,10 +15,10 @@ const PlayerNameInput = ({initialName, playerNumber}) => {
         <View style={styles.InputContainer}>
           <TextInput
             style={styles.InputText}
+            keyboardDismissMode="none"
             value={name}
             onChangeText={e => setName(e)}
             onEndEditing={() => changePlayerName(playerNumber, name)}
-            multiline
             maxLength={20}
           />
         </View>

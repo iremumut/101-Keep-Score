@@ -6,6 +6,7 @@ import {
   ImageBackground,
   FlatList,
   TouchableOpacity,
+  ScrollView,
 } from 'react-native';
 import React, {useState, useContext, useEffect} from 'react';
 import styles from './InformationScreen.style';
@@ -57,20 +58,25 @@ const InformationScreen = ({navigation}) => {
               </View>
               <View style={styles.nameInputSection}>
                 {!isPartners ? (
-                  <FlatList
-                    data={[...playerNames]}
-                    keyExtractor={x => uuid.v4()}
-                    renderItem={x => (
-                      <PlayerNameInput
-                        initialName={x.item}
-                        playerNumber={x.index}
-                      />
-                    )}
-                  />
+                  <ScrollView>
+                    <FlatList
+                      data={[...playerNames]}
+                      scrollEnabled={false}
+                      keyExtractor={x => uuid.v4()}
+                      scrollToOverflowEnabled
+                      renderItem={x => (
+                        <PlayerNameInput
+                          initialName={x.item}
+                          playerNumber={x.index}
+                        />
+                      )}
+                    />
+                  </ScrollView>
                 ) : (
                   <FlatList
                     data={partnerNameList}
                     keyExtractor={x => uuid.v4()}
+                    scrollEnabled={false}
                     renderItem={({item}) => (
                       <View style={styles.partnersInputsList}>
                         <PlayerNameInput

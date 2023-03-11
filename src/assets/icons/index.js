@@ -3,6 +3,7 @@ import IconCheckboxChecked from './checkbox-checked.svg';
 import IconTwoArrows from './left-right-arrows.svg';
 import IconArrowRight from './arrow-right.svg';
 import IconArrowLeft from './arrow-left.svg';
+import IconPlus from './plus.svg';
 
 export {
   IconCheckboxEmpty,
@@ -10,4 +11,5 @@ export {
   IconTwoArrows,
   IconArrowRight,
   IconArrowLeft,
+  IconPlus,
 };

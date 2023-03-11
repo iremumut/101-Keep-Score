@@ -48,7 +48,7 @@ export default styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     flex: 1,
-    marginVertical: '5%',
+    marginTop: '5%',
   },
   nextButton: {
     flexDirection: 'row',

@@ -2,9 +2,9 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 import styles from './FinishGameButton.style';
 
-const FinishGameButton = () => {
+const FinishGameButton = ({onPress}) => {
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
       <Text style={styles.text}>Finish Game</Text>
     </TouchableOpacity>
   );

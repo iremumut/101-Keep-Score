@@ -10,9 +10,9 @@ export const ContextProvider = props => {
     'Player #2',
     'Player #3',
     'Player #4',
-    /*'Player #5',
-    'Player #6',*/
   ]);
+
+  const [scores, setScores] = useState([]);
 
   const [isPartners, setIsPartners] = useState(false);
 
@@ -42,6 +42,11 @@ export const ContextProvider = props => {
     return toString(playerNames[playerNumber]);
   };
 
+  const addScores = oneRowScores => {
+    console.log(scores);
+    setScores([...scores, oneRowScores]);
+  };
+
   return (
     <ScoreContext.Provider
       value={{
@@ -53,6 +58,8 @@ export const ContextProvider = props => {
         isPartners,
         changePartners,
         getPlayerName,
+        addScores,
+        scores,
       }}>
       {props.children}
     </ScoreContext.Provider>
