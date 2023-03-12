@@ -25,7 +25,7 @@ export default styles = StyleSheet.create({
     flexDirection: 'row',
     paddingHorizontal: 5,
     marginVertical: '2%',
-    paddingLeft: '5%',
+    paddingHorizontal: '5%',
   },
   playerNameText: {
     textAlign: 'center',

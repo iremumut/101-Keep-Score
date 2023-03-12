@@ -15,6 +15,9 @@
 		7699B88040F8A987B510C191 /* libPods-KeepScore-KeepScoreTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-KeepScore-KeepScoreTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		678CE0E6FC3F41D6BB8A0302 /* RedHatDisplay-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B4FCBE178F4C4980A9770FE1 /* RedHatDisplay-Black.ttf */; };
+		DEC1056D20674ECE81ED7D28 /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20DE973341C148E1BDD4FCA1 /* Raleway-Medium.ttf */; };
+		C7E960EA5927483BA45B0EAF /* ReadexPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0766B35BFFBA47F39AB7F7D3 /* ReadexPro-Regular.ttf */; };
+		DBFDB8EED6A5451885615640 /* ReadexPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 71D75DC1BF004720B6FCA09C /* ReadexPro-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,9 @@
 		89C6BE57DB24E9ADA2F236DE /* Pods-KeepScore-KeepScoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeepScore-KeepScoreTests.release.xcconfig"; path = "Target Support Files/Pods-KeepScore-KeepScoreTests/Pods-KeepScore-KeepScoreTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		B4FCBE178F4C4980A9770FE1 /* RedHatDisplay-Black.ttf */ = {isa = PBXFileReference; name = "RedHatDisplay-Black.ttf"; path = "../src/assets/fonts/RedHatDisplay-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		20DE973341C148E1BDD4FCA1 /* Raleway-Medium.ttf */ = {isa = PBXFileReference; name = "Raleway-Medium.ttf"; path = "../src/assets/fonts/Raleway-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0766B35BFFBA47F39AB7F7D3 /* ReadexPro-Regular.ttf */ = {isa = PBXFileReference; name = "ReadexPro-Regular.ttf"; path = "../src/assets/fonts/ReadexPro-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		71D75DC1BF004720B6FCA09C /* ReadexPro-SemiBold.ttf */ = {isa = PBXFileReference; name = "ReadexPro-SemiBold.ttf"; path = "../src/assets/fonts/ReadexPro-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +161,9 @@
 			isa = "PBXGroup";
 			children = (
 				B4FCBE178F4C4980A9770FE1 /* RedHatDisplay-Black.ttf */,
+				20DE973341C148E1BDD4FCA1 /* Raleway-Medium.ttf */,
+				0766B35BFFBA47F39AB7F7D3 /* ReadexPro-Regular.ttf */,
+				71D75DC1BF004720B6FCA09C /* ReadexPro-SemiBold.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -257,6 +266,9 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				678CE0E6FC3F41D6BB8A0302 /* RedHatDisplay-Black.ttf in Resources */,
+				DEC1056D20674ECE81ED7D28 /* Raleway-Medium.ttf in Resources */,
+				C7E960EA5927483BA45B0EAF /* ReadexPro-Regular.ttf in Resources */,
+				DBFDB8EED6A5451885615640 /* ReadexPro-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

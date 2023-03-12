@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View, TextInput} from 'react-native';
+import {StyleSheet, Text, View, TextInput, ScrollView} from 'react-native';
 import React, {useState} from 'react';
 import styles from './ScoreInput.style';
 
@@ -8,21 +8,24 @@ const ScoreInput = ({name, index, score, saveScore}) => {
   return (
     <View style={styles.playerContainer}>
       <Text style={styles.playerName}>{name}</Text>
-      <TextInput
-        style={styles.playerInput}
-        keyboardType="numeric"
-        returnKeyType={'next'}
-        value={newScore}
-        onChangeText={e => {
-          if (e.startsWith(0)) {
-            e = e.substring(1);
-          }
-          setNewScore(e);
-        }}
-        blurOnSubmit
-        onEndEditing={() => saveScore(newScore, index)}
-        onBlur={() => saveScore(newScore, index)}
-      />
+      <ScrollView
+        contentContainerStyle={{flexGrow: 1}}
+        keyboardShouldPersistTaps="handled">
+        <TextInput
+          style={styles.playerInput}
+          keyboardType="numeric"
+          returnKeyType={'next'}
+          value={newScore}
+          onChangeText={e => {
+            if (e.startsWith(0)) {
+              e = e.substring(1);
+            }
+            setNewScore(e);
+          }}
+          onEndEditing={() => Promise.all([saveScore(newScore, index)])}
+          onBlur={() => saveScore(newScore, index)}
+        />
+      </ScrollView>
     </View>
   );
 };

@@ -2,6 +2,18 @@
   "migIndex": 1,
   "data": [
     {
+      "path": "src/assets/fonts/Raleway-Medium.ttf",
+      "sha1": "9d35f805e98f95e72f5d0a4ced7397584d7349be"
+    },
+    {
+      "path": "src/assets/fonts/ReadexPro-Regular.ttf",
+      "sha1": "93e4080794b725f216a94b57ed62a51bc77bce91"
+    },
+    {
+      "path": "src/assets/fonts/ReadexPro-SemiBold.ttf",
+      "sha1": "13a27057c122639d69fd0c1e5448d73ff7ba0bb8"
+    },
+    {
       "path": "src/assets/fonts/RedHatDisplay-Black.ttf",
       "sha1": "f42314811d1b567a9b54a2565f77d36662b4fe0b"
     }

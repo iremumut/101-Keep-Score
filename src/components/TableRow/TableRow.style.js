@@ -3,11 +3,11 @@ import AppStyles from '../../constants/AppStyles';
 
 export default styles = StyleSheet.create({
   rowContainer: {
-    //backgroundColor: 'yellow',
+    flex: 1,
     width: '100%',
     paddingVertical: '2%',
     flexDirection: 'row',
-    paddingRight: 5,
+    paddingLeft: 5,
   },
   rowNumber: {
     color: AppStyles.color.white,
@@ -17,14 +17,22 @@ export default styles = StyleSheet.create({
     height: 22,
     textAlign: 'center',
     borderRadius: 50,
+    marginRight: '2%',
   },
   scoreText: {
-    textAlign: 'center',
-    paddingHorizontal: '5%',
+    textAlign: 'left',
+    paddingHorizontal: '3%',
     color: AppStyles.color.white,
     fontFamily: 'ReadexPro-Regular',
     fontWeight: '400',
     fontSize: 14,
     letterSpacing: 0.01,
+  },
+  rowScores: {
+    width: '100%',
+    flexDirection: 'row',
+  },
+  deleteIcon: {
+    flex: 0.2,
   },
 });

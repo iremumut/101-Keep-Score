@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   TouchableHighlight,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import BackgroundContainer from '../../components/BackgroundContainer/BackgroundContainer';
 import styles from './ScoreScreen.style';
 import FinishGameButton from '../../components/FinishGameButton/FinishGameButton';
@@ -21,6 +21,8 @@ const bg = require('../../assets/images/backgroundScore.png');
 const ScoreScreen = ({navigation}) => {
   const [enterScoreModalVisible, setEnterScoreModalVisible] = useState(false);
 
+  const {getWinners} = useContext(ScoreContext);
+
   return (
     <ScoreContext.Consumer>
       {() => (
@@ -28,6 +30,7 @@ const ScoreScreen = ({navigation}) => {
           <View style={styles.container}>
             <FinishGameButton
               onPress={() => {
+                getWinners();
                 navigation.push('Result');
               }}
             />

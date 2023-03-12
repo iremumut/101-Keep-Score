@@ -16,6 +16,8 @@ export const ContextProvider = props => {
 
   const [isPartners, setIsPartners] = useState(false);
 
+  const [winners, setWinners] = useState([]);
+
   const changePlayerCount = count => {
     setPlayerCount(count);
     const names = [];
@@ -43,8 +45,42 @@ export const ContextProvider = props => {
   };
 
   const addScores = oneRowScores => {
-    console.log(scores);
     setScores([...scores, oneRowScores]);
+  };
+
+  const deleteLastScores = () => {
+    const newScores = scores.slice(0, scores.length - 1);
+    setScores(newScores);
+  };
+
+  const getWinners = () => {
+    let res = [];
+    playerNames.forEach((x, ind) => {
+      let sum = 0;
+      scores.forEach(x => {
+        sum = sum + x[ind];
+      });
+      res.push({score: sum, name: x});
+    });
+
+    if (isPartners) {
+      const newRes = [...res];
+      res = [];
+      for (let i = 0; i <= newRes.length - 1; i = i + 2) {
+        const team = {
+          name: `${playerNames[i]}-${playerNames[i + 1]}`,
+          score: newRes[i].score + newRes[i + 1].score,
+        };
+        res.push(team);
+      }
+    }
+    const newArr = res.sort((a, b) => {
+      if (a.score < b.score) {
+        return -1;
+      } else return 1;
+    });
+
+    setWinners(newArr);
   };
 
   return (
@@ -60,6 +96,9 @@ export const ContextProvider = props => {
         getPlayerName,
         addScores,
         scores,
+        deleteLastScores,
+        winners,
+        getWinners,
       }}>
       {props.children}
     </ScoreContext.Provider>

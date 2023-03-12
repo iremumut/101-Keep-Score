@@ -10,7 +10,7 @@ export default styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    width: width,
+    width: width + 10,
     height: height,
   },
 });

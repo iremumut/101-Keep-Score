@@ -26,7 +26,6 @@ const bg = require('../../assets/images/backgroundHome.png');
 const InformationScreen = ({navigation}) => {
   const {playerCount, playerNames, isPartners, changePartners} =
     useContext(ScoreContext);
-  //const [isPartners, setIsPartners] = useState(false);
   const [partnerNameList, setPartnerNameList] = useState([]);
 
   useEffect(() => {

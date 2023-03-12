@@ -4,6 +4,9 @@ import IconTwoArrows from './left-right-arrows.svg';
 import IconArrowRight from './arrow-right.svg';
 import IconArrowLeft from './arrow-left.svg';
 import IconPlus from './plus.svg';
+import IconDelete from './delete.svg';
+import IconClose from './close.svg';
+import IconTrophy from './trophy.svg';
 
 export {
   IconCheckboxEmpty,
@@ -12,4 +15,7 @@ export {
   IconArrowRight,
   IconArrowLeft,
   IconPlus,
+  IconDelete,
+  IconClose,
+  IconTrophy,
 };

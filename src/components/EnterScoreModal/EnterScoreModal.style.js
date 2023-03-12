@@ -8,7 +8,7 @@ var height = Dimensions.get('window').height;
 export default styles = StyleSheet.create({
   container: {
     width: '90%',
-    height: 200,
+    height: 230,
     backgroundColor: AppStyles.color.orange,
     position: 'absolute',
     alignSelf: 'center',
@@ -23,7 +23,7 @@ export default styles = StyleSheet.create({
     },
     shadowOpacity: 0.9,
     shadowRadius: 12.87,
-    padding: '10%',
+    padding: '5%',
   },
   backdrop: {
     position: 'absolute',
@@ -45,5 +45,9 @@ export default styles = StyleSheet.create({
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: 18,
+  },
+  closeButton: {
+    alignSelf: 'flex-end',
+    marginBottom: '2%',
   },
 });

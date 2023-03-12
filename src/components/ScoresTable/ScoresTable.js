@@ -7,7 +7,7 @@ import LineSeparator from '../LineSeparator/LineSeparator';
 import TableRow from '../TableRow/TableRow';
 
 const ScoresTable = () => {
-  const {playerNames} = useContext(ScoreContext);
+  const {playerNames, scores} = useContext(ScoreContext);
 
   return (
     <ScoreContext.Consumer>
@@ -34,7 +34,17 @@ const ScoresTable = () => {
           </View>
           <LineSeparator />
           <View style={styles.rowContainer}>
-            <TableRow />
+            <FlatList
+              data={scores}
+              keyExtractor={x => uuid.v4()}
+              renderItem={x => (
+                <TableRow
+                  rowNumber={x.index + 1}
+                  scores={x.item}
+                  lastRow={x.index === scores.length - 1}
+                />
+              )}
+            />
           </View>
         </View>
       )}
