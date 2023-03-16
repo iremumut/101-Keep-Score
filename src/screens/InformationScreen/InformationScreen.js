@@ -61,7 +61,7 @@ const InformationScreen = ({navigation}) => {
                     <FlatList
                       data={[...playerNames]}
                       scrollEnabled={false}
-                      keyExtractor={x => uuid.v4()}
+                      keyExtractor={x => x}
                       scrollToOverflowEnabled
                       renderItem={x => (
                         <PlayerNameInput
@@ -74,7 +74,7 @@ const InformationScreen = ({navigation}) => {
                 ) : (
                   <FlatList
                     data={partnerNameList}
-                    keyExtractor={x => uuid.v4()}
+                    keyExtractor={x => x}
                     scrollEnabled={false}
                     renderItem={({item}) => (
                       <View style={styles.partnersInputsList}>

@@ -1,5 +1,5 @@
 import {View, Text, FlatList} from 'react-native';
-import React, {useContext} from 'react';
+import React, {useContext, useRef, useEffect} from 'react';
 import styles from './ScoresTable.style';
 import {ScoreContext} from '../../context/scoreContext';
 import uuid from 'react-native-uuid';
@@ -8,6 +8,8 @@ import TableRow from '../TableRow/TableRow';
 
 const ScoresTable = () => {
   const {playerNames, scores} = useContext(ScoreContext);
+
+  const listRef = useRef();
 
   return (
     <ScoreContext.Consumer>
@@ -20,8 +22,8 @@ const ScoresTable = () => {
               horizontal
               scrollEnabled={false}
               contentContainerStyle={{
-                justifyContent: 'space-between',
                 flex: 1,
+                width: '100%',
               }}
               renderItem={({item}) => {
                 return (
@@ -36,7 +38,9 @@ const ScoresTable = () => {
           <View style={styles.rowContainer}>
             <FlatList
               data={scores}
+              ref={listRef}
               keyExtractor={x => uuid.v4()}
+              contentContainerStyle={{overflow: 'scroll'}}
               renderItem={x => (
                 <TableRow
                   rowNumber={x.index + 1}

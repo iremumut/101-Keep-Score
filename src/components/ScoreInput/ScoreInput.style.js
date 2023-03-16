@@ -1,7 +1,9 @@
 import {StyleSheet} from 'react-native';
 
 export default styles = StyleSheet.create({
-  playerContainer: {},
+  playerContainer: {
+    flexBasis: '25%',
+  },
   playerName: {
     textAlign: 'center',
     color: AppStyles.color.white,
@@ -16,5 +18,6 @@ export default styles = StyleSheet.create({
     marginTop: 10,
     textAlign: 'center',
     color: AppStyles.color.white,
+    marginHorizontal: '5%',
   },
 });

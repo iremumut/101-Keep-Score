@@ -39,7 +39,6 @@ export default styles = StyleSheet.create({
   },
   resultContainer: {
     flexDirection: 'row',
-    //width: '50%',
     justifyContent: 'space-between',
     alignSelf: 'center',
     marginVertical: '5%',
@@ -57,7 +56,7 @@ export default styles = StyleSheet.create({
   },
   winnerContainer: {
     position: 'absolute',
-    top: '45%',
+    top: '40%',
     flexDirection: 'column',
   },
   winnerText: {
@@ -66,5 +65,7 @@ export default styles = StyleSheet.create({
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: 30,
+    width: '50%',
+    backgroundColor: 'pink',
   },
 });

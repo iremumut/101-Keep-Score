@@ -2,10 +2,10 @@ import {StyleSheet} from 'react-native';
 
 export default styles = StyleSheet.create({
   tableContainer: {
-    marginTop: '35%',
+    marginTop: '30%',
     alignSelf: 'center',
     width: '100%',
-    height: '70%',
+    height: '75%',
     borderColor: AppStyles.color.white,
     borderRadius: 12.87,
     borderWidth: 0.58,
@@ -34,5 +34,9 @@ export default styles = StyleSheet.create({
     fontWeight: '600',
     fontSize: 14,
     letterSpacing: 0.01,
+    flexBasis: '25%',
+  },
+  rowContainer: {
+    flex: 1,
   },
 });

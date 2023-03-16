@@ -1,30 +1,34 @@
-import {StyleSheet, Text, View, TextInput, ScrollView} from 'react-native';
+import {Text, View, TextInput, ScrollView} from 'react-native';
 import React, {useState} from 'react';
 import styles from './ScoreInput.style';
+import {TouchableWithoutFeedback, Keyboard} from 'react-native';
 
 const ScoreInput = ({name, index, score, saveScore}) => {
   const [newScore, setNewScore] = useState(score);
 
   return (
     <View style={styles.playerContainer}>
-      <Text style={styles.playerName}>{name}</Text>
+      <Text style={styles.playerName}>
+        {name.length > 9 ? name.slice(0, 9) + '..' : name}
+      </Text>
       <ScrollView
         contentContainerStyle={{flexGrow: 1}}
-        keyboardShouldPersistTaps="handled">
-        <TextInput
-          style={styles.playerInput}
-          keyboardType="numeric"
-          returnKeyType={'next'}
-          value={newScore}
-          onChangeText={e => {
-            if (e.startsWith(0)) {
-              e = e.substring(1);
-            }
-            setNewScore(e);
-          }}
-          onEndEditing={() => Promise.all([saveScore(newScore, index)])}
-          onBlur={() => saveScore(newScore, index)}
-        />
+        keyboardShouldPersistTaps="never">
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+          <TextInput
+            style={styles.playerInput}
+            keyboardType="numeric"
+            value={newScore}
+            onTouchCancel={() => saveScore(newScore, index)}
+            onChangeText={e => {
+              if (e.startsWith(0)) {
+                e = e.substring(1);
+              }
+              setNewScore(e);
+            }}
+            onEndEditing={() => saveScore(newScore, index)}
+          />
+        </TouchableWithoutFeedback>
       </ScrollView>
     </View>
   );

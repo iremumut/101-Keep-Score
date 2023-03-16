@@ -29,7 +29,12 @@ const ResultScreen = ({navigation}) => {
         <View style={styles.winnerSection}>
           <Image source={trophy} style={styles.winnerIcon} />
           <View style={[styles.winnerContainer]}>
-            <Text style={styles.winnerText}>{winners[0].name}</Text>
+            <Text
+              style={styles.winnerText}
+              lineBreakMode="tail"
+              numberOfLines={5}>
+              {winners[0].name}
+            </Text>
             <Text style={styles.winnerText}>{winners[0].score}</Text>
           </View>
         </View>

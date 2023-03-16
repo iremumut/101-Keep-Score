@@ -17,22 +17,21 @@ export default styles = StyleSheet.create({
     height: 22,
     textAlign: 'center',
     borderRadius: 50,
-    marginRight: '2%',
   },
   scoreText: {
-    textAlign: 'left',
-    paddingHorizontal: '3%',
+    textAlign: 'center',
     color: AppStyles.color.white,
     fontFamily: 'ReadexPro-Regular',
     fontWeight: '400',
     fontSize: 14,
     letterSpacing: 0.01,
+    flexBasis: '20%',
   },
   rowScores: {
     width: '100%',
     flexDirection: 'row',
   },
   deleteIcon: {
-    flex: 0.2,
+    flex: 0.16,
   },
 });

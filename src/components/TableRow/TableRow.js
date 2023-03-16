@@ -23,6 +23,7 @@ const TableRow = ({rowNumber, scores, lastRow}) => {
                 contentContainerStyle={{
                   justifyContent: 'space-between',
                   flex: 1,
+                  width: '100%',
                 }}
                 renderItem={({item}) => (
                   <Text style={styles.scoreText}>{item}</Text>

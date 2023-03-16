@@ -12,11 +12,11 @@ const EnterScoreModal = ({visible, close}) => {
   const [scores, setScores] = useState(Array(playerCount).fill(0));
   const [scoreSaveCount, setScoreSaveCount] = useState(0);
 
-  const saveScore = async (e, index) => {
+  const saveScore = (e, index) => {
     setScoreSaveCount(scoreSaveCount + 1);
     const newScores = [...scores];
     newScores[index] = parseInt(e) ? parseInt(e) : 0;
-    await setScores(newScores);
+    setScores(newScores);
   };
 
   return (
@@ -34,7 +34,7 @@ const EnterScoreModal = ({visible, close}) => {
               </TouchableOpacity>
               <FlatList
                 data={playerNames}
-                keyExtractor={x => uuid.v4()}
+                keyExtractor={x => x}
                 horizontal
                 contentContainerStyle={{
                   justifyContent: 'space-between',
@@ -56,10 +56,10 @@ const EnterScoreModal = ({visible, close}) => {
                     ? {backgroundColor: '#A9A9A9'}
                     : null,
                 ]}
-                disabled={scoreSaveCount !== scores.length}
+                //disabled={scoreSaveCount !== scores.length}
                 onPress={() => {
                   close();
-                  setTimeout(() => addScores(scores), 2000);
+                  addScores(scores);
                 }}>
                 <Text style={styles.buttonText}>Save</Text>
               </TouchableOpacity>
