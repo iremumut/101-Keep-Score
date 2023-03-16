@@ -65,7 +65,6 @@ export default styles = StyleSheet.create({
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: 30,
-    width: '50%',
-    backgroundColor: 'pink',
+    width: '60%',
   },
 });
