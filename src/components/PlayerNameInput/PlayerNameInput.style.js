@@ -10,14 +10,6 @@ export default styles = StyleSheet.create({
     paddingHorizontal: 5,
     flex: 1,
     marginVertical: '5%',
-    /*shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,*/
   },
   InputText: {
     fontFamily: 'ReadexPro-Regular',

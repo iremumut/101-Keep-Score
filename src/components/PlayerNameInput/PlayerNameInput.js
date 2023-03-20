@@ -1,4 +1,4 @@
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import React, {useContext, useState} from 'react';
 import styles from './PlayerNameInput.style';
 import {TextInput} from 'react-native';

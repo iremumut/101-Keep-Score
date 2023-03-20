@@ -9,7 +9,7 @@ const ScoreInput = ({name, index, score, saveScore}) => {
   return (
     <View style={styles.playerContainer}>
       <Text style={styles.playerName}>
-        {name.length > 9 ? name.slice(0, 9) + '..' : name}
+        {name.length > 8 ? name.slice(0, 8).trim() + '..' : name}
       </Text>
       <ScrollView
         contentContainerStyle={{flexGrow: 1}}

@@ -2,6 +2,10 @@
   "migIndex": 1,
   "data": [
     {
+      "path": "src/assets/fonts/Raleway-Bold.ttf",
+      "sha1": "fd799b6fb4aff1a9402e071ab02d1ddea731b868"
+    },
+    {
       "path": "src/assets/fonts/Raleway-Medium.ttf",
       "sha1": "9d35f805e98f95e72f5d0a4ced7397584d7349be"
     },

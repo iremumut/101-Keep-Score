@@ -1,13 +1,4 @@
-import {
-  Button,
-  StyleSheet,
-  Text,
-  View,
-  ImageBackground,
-  FlatList,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import {Text, View, FlatList, TouchableOpacity, ScrollView} from 'react-native';
 import React, {useState, useContext, useEffect} from 'react';
 import styles from './InformationScreen.style';
 import {
@@ -19,7 +10,7 @@ import {
 import BackgroundContainer from '../../components/BackgroundContainer/BackgroundContainer';
 import PlayerNameInput from '../../components/PlayerNameInput/PlayerNameInput';
 import {ScoreContext} from '../../context/scoreContext';
-import uuid from 'react-native-uuid';
+import GoBackButton from '../../components/GoBackButton/GoBackButton';
 
 const bg = require('../../assets/images/backgroundHome.png');
 
@@ -47,6 +38,7 @@ const InformationScreen = ({navigation}) => {
       {() => (
         <View style={styles.container}>
           <BackgroundContainer background={bg}>
+            <GoBackButton navigation={navigation} />
             <View style={styles.contentContainer}>
               <Text style={styles.title}>Enter Players Names</Text>
               <View style={styles.partnerSection}>
@@ -61,7 +53,7 @@ const InformationScreen = ({navigation}) => {
                     <FlatList
                       data={[...playerNames]}
                       scrollEnabled={false}
-                      keyExtractor={x => x}
+                      keyExtractor={(item, index) => index.toString()}
                       scrollToOverflowEnabled
                       renderItem={x => (
                         <PlayerNameInput
@@ -74,7 +66,7 @@ const InformationScreen = ({navigation}) => {
                 ) : (
                   <FlatList
                     data={partnerNameList}
-                    keyExtractor={x => x}
+                    keyExtractor={(item, index) => index.toString()}
                     scrollEnabled={false}
                     renderItem={({item}) => (
                       <View style={styles.partnersInputsList}>

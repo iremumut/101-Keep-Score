@@ -8,9 +8,8 @@ export default styles = StyleSheet.create({
     alignItems: 'center',
   },
   titleContainer: {
-    //flex: 1,
-    marginTop: '20%',
-    marginBottom: '8%',
+    marginTop: '10%',
+    marginBottom: '5%',
   },
   title: {
     color: AppStyles.color.white,
@@ -56,8 +55,9 @@ export default styles = StyleSheet.create({
   },
   winnerContainer: {
     position: 'absolute',
-    top: '40%',
+    top: '35%',
     flexDirection: 'column',
+    width: '45%',
   },
   winnerText: {
     color: AppStyles.color.white,
@@ -65,6 +65,22 @@ export default styles = StyleSheet.create({
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: 30,
-    width: '60%',
+    width: '100%',
+  },
+  newGameButton: {
+    backgroundColor: AppStyles.color.white,
+    paddingHorizontal: 50,
+    paddingVertical: 15,
+    borderRadius: 40,
+    position: 'absolute',
+    alignSelf: 'center',
+    bottom: '10%',
+    alignItems: 'center',
+  },
+  newGameButtonText: {
+    color: AppStyles.color.pink,
+    fontFamily: 'Raleway-Bold',
+    fontSize: 20,
+    textAlign: 'center',
   },
 });

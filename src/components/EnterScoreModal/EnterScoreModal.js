@@ -2,7 +2,6 @@ import {Text, View, Modal, FlatList, TouchableOpacity} from 'react-native';
 import React, {useContext, useState} from 'react';
 import styles from './EnterScoreModal.style';
 import {ScoreContext} from '../../context/scoreContext';
-import uuid from 'react-native-uuid';
 import ScoreInput from '../ScoreInput/ScoreInput';
 import {IconClose} from '../../assets/icons';
 
@@ -34,7 +33,7 @@ const EnterScoreModal = ({visible, close}) => {
               </TouchableOpacity>
               <FlatList
                 data={playerNames}
-                keyExtractor={x => x}
+                keyExtractor={(item, index) => index.toString()}
                 horizontal
                 contentContainerStyle={{
                   justifyContent: 'space-between',
@@ -56,7 +55,7 @@ const EnterScoreModal = ({visible, close}) => {
                     ? {backgroundColor: '#A9A9A9'}
                     : null,
                 ]}
-                //disabled={scoreSaveCount !== scores.length}
+                disabled={scoreSaveCount !== scores.length}
                 onPress={() => {
                   close();
                   addScores(scores);

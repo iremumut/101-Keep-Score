@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 
 export default styles = StyleSheet.create({
   tableContainer: {
-    marginTop: '30%',
+    marginTop: '25%',
     alignSelf: 'center',
     width: '100%',
     height: '75%',

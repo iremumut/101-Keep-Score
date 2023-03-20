@@ -7,9 +7,7 @@ export default styles = StyleSheet.create({
     paddingHorizontal: '5%',
   },
   plusIcon: {
-    //position: 'absolute',
-    //bottom: 20,
     alignSelf: 'center',
-    marginVertical: '5%',
+    marginTop: '2%',
   },
 });

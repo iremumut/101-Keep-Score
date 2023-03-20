@@ -4,10 +4,13 @@ import AppStyles from '../../constants/AppStyles';
 export default styles = StyleSheet.create({
   container: {
     flex: 1,
+    width: '100%',
   },
   contentContainer: {
-    marginVertical: '30%',
-    marginHorizontal: '15%',
+    marginVertical: '15%',
+    marginHorizontal: '10%',
+    paddingHorizontal: '10%',
+    width: '100%',
     flex: 1,
   },
   title: {
@@ -23,7 +26,7 @@ export default styles = StyleSheet.create({
   partnerSection: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginVertical: '15%',
+    marginVertical: '10%',
   },
   partnerSectionText: {
     fontFamily: 'ReadexPro-Regular',
@@ -36,7 +39,6 @@ export default styles = StyleSheet.create({
   },
   nameInputSection: {
     flex: 1,
-    //marginTop: '20%',
   },
   partnersInputSection: {
     flexDirection: 'row',

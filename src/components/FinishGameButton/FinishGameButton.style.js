@@ -16,11 +16,10 @@ export default styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-
     elevation: 5,
     backgroundColor: 'transparent',
     position: 'absolute',
-    top: '5%',
+    top: '2%',
     right: '5%',
   },
   text: {
