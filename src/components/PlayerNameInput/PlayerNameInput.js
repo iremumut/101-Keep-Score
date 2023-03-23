@@ -1,5 +1,5 @@
 import {View} from 'react-native';
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 import styles from './PlayerNameInput.style';
 import {TextInput} from 'react-native';
 import {ScoreContext} from '../../context/scoreContext';
@@ -8,6 +8,10 @@ const PlayerNameInput = ({initialName, playerNumber}) => {
   const {changePlayerName} = useContext(ScoreContext);
 
   const [name, setName] = useState(initialName);
+
+  useEffect(() => {
+    setName(initialName);
+  }, [initialName]);
 
   return (
     <ScoreContext.Consumer>
@@ -18,8 +22,16 @@ const PlayerNameInput = ({initialName, playerNumber}) => {
             keyboardDismissMode="none"
             value={name}
             onChangeText={e => setName(e)}
-            onEndEditing={() => changePlayerName(playerNumber, name)}
-            maxLength={20}
+            onEndEditing={() => {
+              if (name.length !== 0) {
+                changePlayerName(playerNumber, name);
+              } else {
+                setName(initialName);
+              }
+            }}
+            multiline={false}
+            numberOfLines={1}
+            maxLength={12}
           />
         </View>
       )}

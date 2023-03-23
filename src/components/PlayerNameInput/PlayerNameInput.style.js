@@ -7,7 +7,7 @@ export default styles = StyleSheet.create({
     borderWidth: 0.58,
     borderRadius: 25,
     minHeight: 50,
-    paddingHorizontal: 5,
+    paddingHorizontal: 6,
     flex: 1,
     marginVertical: '5%',
   },

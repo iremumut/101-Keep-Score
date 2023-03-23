@@ -62,7 +62,7 @@ const ResultScreen = ({navigation}) => {
               style={styles.newGameButton}
               onPress={() => {
                 clearWinners();
-                navigation.navigate('Home');
+                navigation.navigate('Information');
               }}>
               <Text style={styles.newGameButtonText}>New Game</Text>
             </TouchableOpacity>

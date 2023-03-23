@@ -2,20 +2,20 @@ import React, {createContext, useState} from 'react';
 
 export const ScoreContext = createContext();
 
-const initial_Data = {
+const initialState = {
   playerNames: ['Player #1', 'Player #2', 'Player #3', 'Player #4'],
   playerCount: 4,
   partners: false,
 };
 
 export const ContextProvider = props => {
-  const [playerCount, setPlayerCount] = useState(initial_Data.playerCount);
+  const [playerCount, setPlayerCount] = useState(initialState.playerCount);
 
-  const [playerNames, setPlayerNames] = useState([...initial_Data.playerNames]);
+  const [playerNames, setPlayerNames] = useState([...initialState.playerNames]);
 
   const [scores, setScores] = useState([]);
 
-  const [isPartners, setIsPartners] = useState(initial_Data.partners);
+  const [isPartners, setIsPartners] = useState(initialState.partners);
 
   const [winners, setWinners] = useState([]);
 
@@ -83,9 +83,9 @@ export const ContextProvider = props => {
 
     setWinners(newArr);
     setScores([]);
-    setPlayerNames([...initial_Data.playerNames]);
-    setPlayerCount(initial_Data.playerCount);
-    setIsPartners(initial_Data.partners);
+    setPlayerNames([...initialState.playerNames]);
+    setPlayerCount(initialState.playerCount);
+    setIsPartners(initialState.partners);
   };
 
   const clearWinners = () => {
