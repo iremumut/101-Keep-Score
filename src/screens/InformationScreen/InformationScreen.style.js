@@ -66,4 +66,9 @@ export default styles = StyleSheet.create({
     fontWeight: '400',
     fontSize: 18,
   },
+  settingsButton: {
+    position: 'absolute',
+    top: '2%',
+    right: '5%',
+  },
 });

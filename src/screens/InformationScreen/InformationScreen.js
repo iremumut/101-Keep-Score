@@ -6,12 +6,13 @@ import {
   IconCheckboxEmpty,
   IconTwoArrows,
   IconArrowRight,
+  IconSettings,
 } from '../../assets/icons';
 import BackgroundContainer from '../../components/BackgroundContainer/BackgroundContainer';
 import PlayerNameInput from '../../components/PlayerNameInput/PlayerNameInput';
 import {ScoreContext} from '../../context/scoreContext';
 import GoBackButton from '../../components/GoBackButton/GoBackButton';
-import GameInformationModal from '../../components/GameInformationModal/GameInformationModal';
+import SettingsModal from '../../components/GameInformationModal/SettingsModal';
 
 const bg = require('../../assets/images/backgroundHome.png');
 
@@ -19,8 +20,7 @@ const InformationScreen = ({navigation}) => {
   const {playerCount, playerNames, isPartners, changePartners} =
     useContext(ScoreContext);
   const [partnerNameList, setPartnerNameList] = useState([]);
-  const [gameInformationModalOpen, setGameInformationModalOpen] =
-    useState(true);
+  const [settingsModal, setSettingsModal] = useState(false);
 
   useEffect(() => {
     if (isPartners) {
@@ -42,14 +42,25 @@ const InformationScreen = ({navigation}) => {
         <View style={styles.container}>
           <BackgroundContainer background={bg}>
             <GoBackButton navigation={navigation} />
+            <TouchableOpacity
+              onPress={() => setSettingsModal(true)}
+              style={styles.settingsButton}>
+              <IconSettings />
+            </TouchableOpacity>
             <View style={styles.contentContainer}>
               <Text style={styles.title}>Enter Players Names</Text>
-              <View style={styles.partnerSection}>
-                <Text style={styles.partnerSectionText}>Partners ?</Text>
-                <TouchableOpacity onPress={() => changePartners()}>
-                  {isPartners ? <IconCheckboxChecked /> : <IconCheckboxEmpty />}
-                </TouchableOpacity>
-              </View>
+              {playerCount % 2 !== 0 ? null : (
+                <View style={styles.partnerSection}>
+                  <Text style={styles.partnerSectionText}>Partners ?</Text>
+                  <TouchableOpacity onPress={() => changePartners()}>
+                    {isPartners ? (
+                      <IconCheckboxChecked />
+                    ) : (
+                      <IconCheckboxEmpty />
+                    )}
+                  </TouchableOpacity>
+                </View>
+              )}
               <View style={styles.nameInputSection}>
                 {!isPartners ? (
                   <ScrollView>
@@ -94,8 +105,12 @@ const InformationScreen = ({navigation}) => {
               <Text style={styles.nextButtonText}>Next</Text>
               <IconArrowRight />
             </TouchableOpacity>
-
-            <GameInformationModal visible={gameInformationModalOpen} />
+            {settingsModal ? (
+              <SettingsModal
+                visible={settingsModal}
+                onClose={() => setSettingsModal(false)}
+              />
+            ) : null}
           </BackgroundContainer>
         </View>
       )}

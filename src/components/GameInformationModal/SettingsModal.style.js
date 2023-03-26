@@ -39,13 +39,36 @@ export default styles = StyleSheet.create({
     borderBottomWidth: 1,
     width: 35,
     textAlign: 'center',
+    marginHorizontal: 10,
   },
   contentRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    marginVertical: '2%',
+    marginHorizontal: '10%',
   },
   upDownButtons: {
-    //backgroundColor: 'pink',
+    alignSelf: 'flex-end',
+    marginHorizontal: 10,
+  },
+  scoreButtons: {
+    borderColor: AppStyles.color.white,
+    borderWidth: 1,
+    borderRadius: 20,
+    paddingHorizontal: 8,
+    paddingVertical: 3,
+    alignItems: 'center',
+    marginVertical: 3,
+  },
+  scoreText: {
+    width: '80%',
+    marginHorizontal: '10%',
+  },
+  unSelectedBox: {
+    color: AppStyles.color.black,
+    borderColor: AppStyles.color.black,
+  },
+  closeButton: {
+    alignSelf: 'flex-end',
   },
 });

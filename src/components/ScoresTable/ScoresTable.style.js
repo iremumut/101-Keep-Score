@@ -34,7 +34,7 @@ export default styles = StyleSheet.create({
     fontWeight: '600',
     fontSize: 14,
     letterSpacing: 0.01,
-    flexBasis: '25%',
+    paddingHorizontal: 5,
   },
   rowContainer: {
     flex: 1,

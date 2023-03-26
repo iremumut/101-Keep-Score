@@ -19,10 +19,12 @@ export const ContextProvider = props => {
 
   const [winners, setWinners] = useState([]);
 
+  const [highestScoreWins, setHighestScoreWins] = useState(false);
+
   const changePlayerCount = count => {
     setPlayerCount(count);
     const names = [];
-    for (var i = 0; i < count; i++) {
+    for (var i = 1; i <= count; i++) {
       names.push(`Player #${i}`);
     }
     setPlayerNames(names);
@@ -76,9 +78,15 @@ export const ContextProvider = props => {
       }
     }
     const newArr = res.sort((a, b) => {
-      if (a.score < b.score) {
-        return -1;
-      } else return 1;
+      if (highestScoreWins) {
+        if (a.score < b.score) {
+          return 1;
+        } else return -1;
+      } else {
+        if (a.score < b.score) {
+          return -1;
+        } else return 1;
+      }
     });
 
     setWinners(newArr);
@@ -109,6 +117,8 @@ export const ContextProvider = props => {
         winners,
         getWinners,
         clearWinners,
+        highestScoreWins,
+        setHighestScoreWins,
       }}>
       {props.children}
     </ScoreContext.Provider>

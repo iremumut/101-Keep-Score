@@ -18,10 +18,10 @@ const ScoresTable = () => {
               data={playerNames}
               keyExtractor={x => uuid.v4()}
               horizontal
-              scrollEnabled={false}
               contentContainerStyle={{
                 flex: 1,
                 width: '100%',
+                overflow: 'scroll',
               }}
               renderItem={({item}) => {
                 return (
