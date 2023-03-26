@@ -11,6 +11,7 @@ import BackgroundContainer from '../../components/BackgroundContainer/Background
 import PlayerNameInput from '../../components/PlayerNameInput/PlayerNameInput';
 import {ScoreContext} from '../../context/scoreContext';
 import GoBackButton from '../../components/GoBackButton/GoBackButton';
+import GameInformationModal from '../../components/GameInformationModal/GameInformationModal';
 
 const bg = require('../../assets/images/backgroundHome.png');
 
@@ -18,6 +19,8 @@ const InformationScreen = ({navigation}) => {
   const {playerCount, playerNames, isPartners, changePartners} =
     useContext(ScoreContext);
   const [partnerNameList, setPartnerNameList] = useState([]);
+  const [gameInformationModalOpen, setGameInformationModalOpen] =
+    useState(true);
 
   useEffect(() => {
     if (isPartners) {
@@ -91,6 +94,8 @@ const InformationScreen = ({navigation}) => {
               <Text style={styles.nextButtonText}>Next</Text>
               <IconArrowRight />
             </TouchableOpacity>
+
+            <GameInformationModal visible={gameInformationModalOpen} />
           </BackgroundContainer>
         </View>
       )}

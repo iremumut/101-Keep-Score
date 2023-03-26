@@ -2,8 +2,8 @@ import {StyleSheet} from 'react-native';
 import AppStyles from '../../constants/AppStyles';
 import {Dimensions} from 'react-native';
 
-var width = Dimensions.get('window').width; //full width
-var height = Dimensions.get('window').height;
+const width = Dimensions.get('window').width; //full width
+const height = Dimensions.get('window').height;
 
 export default styles = StyleSheet.create({
   container: {
