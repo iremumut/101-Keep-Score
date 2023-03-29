@@ -51,7 +51,10 @@ const SettingsModal = ({visible, onClose}) => {
                         keyboardType="numeric"
                         maxLength={1}
                         value={count.toString()}
-                        onChangeText={e => setCount(e)}
+                        onChangeText={e => {
+                          setCount(e);
+                          changePlayerCount(e);
+                        }}
                         onEndEditing={() => changePlayerCount(count)}
                       />
                       <View>

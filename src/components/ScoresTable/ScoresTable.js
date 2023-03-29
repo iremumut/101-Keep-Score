@@ -18,14 +18,14 @@ const ScoresTable = () => {
               data={playerNames}
               keyExtractor={x => uuid.v4()}
               horizontal
-              contentContainerStyle={{
-                flex: 1,
-                width: '100%',
-                overflow: 'scroll',
-              }}
+              scrollEnabled
               renderItem={({item}) => {
                 return (
-                  <Text style={styles.playerNameText}>
+                  <Text
+                    style={[
+                      styles.playerNameText,
+                      {flexBasis: 1 / playerNames.length},
+                    ]}>
                     {item.length > 9 ? item.slice(0, 9) + '..' : item}
                   </Text>
                 );
@@ -36,8 +36,8 @@ const ScoresTable = () => {
           <View style={styles.rowContainer}>
             <FlatList
               data={scores}
+              scrollEnabled
               keyExtractor={x => uuid.v4()}
-              contentContainerStyle={{overflow: 'scroll'}}
               renderItem={x => (
                 <TableRow
                   rowNumber={x.index + 1}

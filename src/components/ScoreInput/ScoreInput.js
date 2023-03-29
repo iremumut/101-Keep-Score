@@ -29,7 +29,7 @@ const ScoreInput = ({name, index, score, saveScore}) => {
             setNewScore(text);
           }}
           onEndEditing={() => {
-            if (newScore.length !== 0) {
+            if (!newScore || newScore?.length !== 0) {
               saveScore(newScore, index);
             } else {
               setNewScore(score);

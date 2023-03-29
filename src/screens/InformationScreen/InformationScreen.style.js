@@ -39,6 +39,7 @@ export default styles = StyleSheet.create({
   },
   nameInputSection: {
     flex: 1,
+    marginBottom: '10%',
   },
   partnersInputSection: {
     flexDirection: 'row',

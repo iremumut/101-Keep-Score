@@ -23,7 +23,6 @@ export default styles = StyleSheet.create({
   playerNameListContainer: {
     display: 'flex',
     flexDirection: 'row',
-    paddingHorizontal: 5,
     marginVertical: '2%',
     paddingHorizontal: '5%',
   },
@@ -34,7 +33,8 @@ export default styles = StyleSheet.create({
     fontWeight: '600',
     fontSize: 14,
     letterSpacing: 0.01,
-    paddingHorizontal: 5,
+    marginHorizontal: 2,
+    width: 75,
   },
   rowContainer: {
     flex: 1,

@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   ScrollView,
 } from 'react-native';
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 import styles from './EnterScoreModal.style';
 import {ScoreContext} from '../../context/scoreContext';
 import ScoreInput from '../ScoreInput/ScoreInput';
@@ -16,6 +16,11 @@ const EnterScoreModal = ({visible, close}) => {
   const {playerNames, playerCount, addScores} = useContext(ScoreContext);
 
   const [scores, setScores] = useState(Array(playerCount).fill(0));
+
+  useEffect(() => {
+    console.log(playerCount);
+    setScores(Array(playerCount).fill(0));
+  }, [playerCount]);
 
   const saveScore = (e, index) => {
     const newScores = [...scores];
@@ -41,19 +46,20 @@ const EnterScoreModal = ({visible, close}) => {
                 <TouchableOpacity style={styles.closeButton} onPress={close}>
                   <IconClose />
                 </TouchableOpacity>
+                {console.log(scores)}
                 <FlatList
                   data={playerNames}
                   keyExtractor={(item, index) => index.toString()}
                   horizontal
+                  scrollEnabled
                   contentContainerStyle={{
                     justifyContent: 'space-between',
-                    flex: 1,
                   }}
                   renderItem={x => (
                     <ScoreInput
                       name={x.item}
                       index={x.index}
-                      score={scores[x.index].toString()}
+                      score={scores[x.index]?.toString()}
                       saveScore={saveScore}
                     />
                   )}

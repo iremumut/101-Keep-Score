@@ -10,7 +10,7 @@ export default styles = StyleSheet.create({
     fontWeight: 900,
     fontStyle: 'normal',
     fontSize: 70,
-    lineHeight: 100,
+    lineHeight: 90,
     color: AppStyles.color.white,
     marginTop: '20%',
     letterSpacing: 0.1,

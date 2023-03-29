@@ -2,7 +2,8 @@ import {StyleSheet} from 'react-native';
 
 export default styles = StyleSheet.create({
   playerContainer: {
-    flexBasis: '25%',
+    marginHorizontal: 2,
+    width: 80,
   },
   playerName: {
     textAlign: 'center',

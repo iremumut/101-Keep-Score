@@ -19,14 +19,16 @@ const TableRow = ({rowNumber, scores, lastRow}) => {
               <FlatList
                 data={scores}
                 horizontal
+                scrollEnabled
                 keyExtractor={x => uuid.v4()}
-                contentContainerStyle={{
-                  justifyContent: 'space-between',
-                  flex: 1,
-                  width: '100%',
-                }}
-                renderItem={({item}) => (
-                  <Text style={styles.scoreText}>{item}</Text>
+                renderItem={({item, index}) => (
+                  <Text
+                    style={[
+                      styles.scoreText,
+                      index === 0 ? styles.firstText : null,
+                    ]}>
+                    {item}
+                  </Text>
                 )}
               />
               <View style={styles.deleteIcon}>

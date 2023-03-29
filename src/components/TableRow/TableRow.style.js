@@ -25,13 +25,18 @@ export default styles = StyleSheet.create({
     fontWeight: '400',
     fontSize: 14,
     letterSpacing: 0.01,
-    flexBasis: '20%',
+    marginHorizontal: 2,
+    width: 75,
+  },
+  firstText: {
+    marginLeft: 0,
+    width: 69,
   },
   rowScores: {
-    width: '100%',
     flexDirection: 'row',
+    flex: 1,
   },
   deleteIcon: {
-    flex: 0.16,
+    width: 20,
   },
 });
