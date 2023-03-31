@@ -51,9 +51,13 @@ export const ContextProvider = props => {
     setScores([...scores, oneRowScores]);
   };
 
-  const deleteLastScores = () => {
-    const newScores = scores.slice(0, scores.length - 1);
+  const deleteRow = index => {
+    const newScores = scores.filter((x, ind) => ind !== index);
     setScores(newScores);
+  };
+
+  const deleteAllRows = () => {
+    setScores([]);
   };
 
   const getWinners = () => {
@@ -113,12 +117,13 @@ export const ContextProvider = props => {
         getPlayerName,
         addScores,
         scores,
-        deleteLastScores,
         winners,
         getWinners,
         clearWinners,
         highestScoreWins,
         setHighestScoreWins,
+        deleteRow,
+        deleteAllRows,
       }}>
       {props.children}
     </ScoreContext.Provider>

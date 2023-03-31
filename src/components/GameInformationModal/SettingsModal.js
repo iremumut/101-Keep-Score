@@ -46,17 +46,9 @@ const SettingsModal = ({visible, onClose}) => {
                     </TouchableOpacity>
                     <View style={styles.contentRow}>
                       <Text style={styles.text}>Player Count: </Text>
-                      <TextInput
-                        style={[styles.playerCountInput, styles.text]}
-                        keyboardType="numeric"
-                        maxLength={1}
-                        value={count.toString()}
-                        onChangeText={e => {
-                          setCount(e);
-                          changePlayerCount(e);
-                        }}
-                        onEndEditing={() => changePlayerCount(count)}
-                      />
+                      <Text style={[styles.playerCountInput, styles.text]}>
+                        {count}
+                      </Text>
                       <View>
                         <TouchableOpacity
                           style={styles.upDownButtons}

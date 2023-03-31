@@ -18,7 +18,6 @@ const EnterScoreModal = ({visible, close}) => {
   const [scores, setScores] = useState(Array(playerCount).fill(0));
 
   useEffect(() => {
-    console.log(playerCount);
     setScores(Array(playerCount).fill(0));
   }, [playerCount]);
 
@@ -46,7 +45,6 @@ const EnterScoreModal = ({visible, close}) => {
                 <TouchableOpacity style={styles.closeButton} onPress={close}>
                   <IconClose />
                 </TouchableOpacity>
-                {console.log(scores)}
                 <FlatList
                   data={playerNames}
                   keyExtractor={(item, index) => index.toString()}

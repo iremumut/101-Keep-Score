@@ -5,7 +5,7 @@ import styles from './ScoreScreen.style';
 import FinishGameButton from '../../components/FinishGameButton/FinishGameButton';
 import {ScoreContext} from '../../context/scoreContext';
 import ScoresTable from '../../components/ScoresTable/ScoresTable';
-import {IconPlus} from '../../assets/icons';
+import {IconPlus, IconReload} from '../../assets/icons';
 import EnterScoreModal from '../../components/EnterScoreModal/EnterScoreModal';
 import GoBackButton from '../../components/GoBackButton/GoBackButton';
 
@@ -14,7 +14,7 @@ const bg = require('../../assets/images/backgroundScore.png');
 const ScoreScreen = ({navigation}) => {
   const [enterScoreModalVisible, setEnterScoreModalVisible] = useState(false);
 
-  const {getWinners, scores} = useContext(ScoreContext);
+  const {getWinners, scores, deleteAllRows} = useContext(ScoreContext);
 
   return (
     <ScoreContext.Consumer>
@@ -30,6 +30,11 @@ const ScoreScreen = ({navigation}) => {
                 }}
               />
             ) : null}
+            <TouchableOpacity
+              style={styles.reloadButton}
+              onPress={deleteAllRows}>
+              <IconReload />
+            </TouchableOpacity>
             <ScoresTable />
             <TouchableOpacity onPress={() => setEnterScoreModalVisible(true)}>
               <IconPlus style={styles.plusIcon} />

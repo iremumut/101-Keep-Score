@@ -46,12 +46,15 @@ const ResultScreen = ({navigation}) => {
                     style={[
                       styles.resultText,
                       styles.nameText,
-                      {fontSize: 25 - x.index * 5},
+                      {fontSize: 25 - x.index * 5 < 12 ? 12 : 25 - x.index * 5},
                     ]}>
                     {x.item.name}
                   </Text>
                   <Text
-                    style={[styles.resultText, {fontSize: 25 - x.index * 5}]}>
+                    style={[
+                      styles.resultText,
+                      {fontSize: 25 - x.index * 5 < 12 ? 12 : 25 - x.index * 5},
+                    ]}>
                     {x.item.score}
                   </Text>
                 </View>

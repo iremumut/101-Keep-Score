@@ -10,4 +10,9 @@ export default styles = StyleSheet.create({
     alignSelf: 'center',
     marginTop: '2%',
   },
+  reloadButton: {
+    position: 'absolute',
+    top: '2%',
+    left: '15%',
+  },
 });

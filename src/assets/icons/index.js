@@ -9,6 +9,7 @@ import IconClose from './close.svg';
 import IconArrowUp from './up-arrow.svg';
 import IconArrowDown from './down-arrow.svg';
 import IconSettings from './settings.svg';
+import IconReload from './reload.svg';
 
 export {
   IconCheckboxEmpty,
@@ -22,4 +23,5 @@ export {
   IconArrowUp,
   IconArrowDown,
   IconSettings,
+  IconReload,
 };

@@ -1,5 +1,5 @@
 import {View, Text, FlatList} from 'react-native';
-import React, {useContext} from 'react';
+import React, {useContext, useRef, useState} from 'react';
 import styles from './ScoresTable.style';
 import {ScoreContext} from '../../context/scoreContext';
 import uuid from 'react-native-uuid';
@@ -8,6 +8,10 @@ import TableRow from '../TableRow/TableRow';
 
 const ScoresTable = () => {
   const {playerNames, scores} = useContext(ScoreContext);
+
+  const [rightSideScrollAmount, setRightSideScrollOffsetAmount] = useState(0);
+
+  const namesListRef = useRef(null);
 
   return (
     <ScoreContext.Consumer>
@@ -19,6 +23,23 @@ const ScoresTable = () => {
               keyExtractor={x => uuid.v4()}
               horizontal
               scrollEnabled
+              ref={namesListRef}
+              onScroll={e => {
+                if (e.nativeEvent.contentOffset.x !== rightSideScrollAmount) {
+                  if (
+                    e.nativeEvent.contentOffset.x > 0 &&
+                    rightSideScrollAmount > e.nativeEvent.contentOffset.x
+                  ) {
+                    setRightSideScrollOffsetAmount(
+                      e.nativeEvent.contentOffset.x,
+                    );
+                  } else {
+                    setRightSideScrollOffsetAmount(
+                      e.nativeEvent.contentOffset.x,
+                    );
+                  }
+                }
+              }}
               renderItem={({item}) => {
                 return (
                   <Text
@@ -43,6 +64,11 @@ const ScoresTable = () => {
                   rowNumber={x.index + 1}
                   scores={x.item}
                   lastRow={x.index === scores.length - 1}
+                  index={x.index}
+                  rightSideScrollAmount={rightSideScrollAmount}
+                  setRightSideScrollOffsetAmount={
+                    setRightSideScrollOffsetAmount
+                  }
                 />
               )}
             />

@@ -1,13 +1,22 @@
 import {Text, View, FlatList, TouchableOpacity} from 'react-native';
-import React, {useContext} from 'react';
+import React, {useContext, useRef, useEffect} from 'react';
 import styles from './TableRow.style';
 import LineSeparator from '../LineSeparator/LineSeparator';
 import {IconDelete} from '../../assets/icons';
 import {ScoreContext} from '../../context/scoreContext';
 import uuid from 'react-native-uuid';
 
-const TableRow = ({rowNumber, scores, lastRow}) => {
-  const {deleteLastScores} = useContext(ScoreContext);
+const TableRow = ({rowNumber, scores, rightSideScrollAmount, index}) => {
+  const {deleteRow} = useContext(ScoreContext);
+
+  const rowRef = useRef(null);
+
+  useEffect(() => {
+    rowRef.current.scrollToOffset({
+      offset: rightSideScrollAmount,
+      animated: true,
+    });
+  }, [rightSideScrollAmount]);
 
   return (
     <ScoreContext.Consumer>
@@ -20,6 +29,7 @@ const TableRow = ({rowNumber, scores, lastRow}) => {
                 data={scores}
                 horizontal
                 scrollEnabled
+                ref={rowRef}
                 keyExtractor={x => uuid.v4()}
                 renderItem={({item, index}) => (
                   <Text
@@ -32,11 +42,9 @@ const TableRow = ({rowNumber, scores, lastRow}) => {
                 )}
               />
               <View style={styles.deleteIcon}>
-                {lastRow ? (
-                  <TouchableOpacity onPress={deleteLastScores}>
-                    <IconDelete />
-                  </TouchableOpacity>
-                ) : null}
+                <TouchableOpacity onPress={() => deleteRow(index)}>
+                  <IconDelete />
+                </TouchableOpacity>
               </View>
             </View>
           </View>
