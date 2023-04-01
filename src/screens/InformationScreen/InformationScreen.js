@@ -13,6 +13,7 @@ import PlayerNameInput from '../../components/PlayerNameInput/PlayerNameInput';
 import {ScoreContext} from '../../context/scoreContext';
 import GoBackButton from '../../components/GoBackButton/GoBackButton';
 import SettingsModal from '../../components/GameInformationModal/SettingsModal';
+import {useTranslation} from 'react-i18next';
 
 const bg = require('../../assets/images/backgroundHome.png');
 
@@ -21,6 +22,7 @@ const InformationScreen = ({navigation}) => {
     useContext(ScoreContext);
   const [partnerNameList, setPartnerNameList] = useState([]);
   const [settingsModal, setSettingsModal] = useState(false);
+  const {t} = useTranslation();
 
   useEffect(() => {
     if (isPartners) {
@@ -48,10 +50,15 @@ const InformationScreen = ({navigation}) => {
               <IconSettings />
             </TouchableOpacity>
             <View style={styles.contentContainer}>
-              <Text style={styles.title}>Enter Players Names</Text>
+              <Text style={styles.title}>
+                {t('InformationScreen.EnterPlayersNames')}
+              </Text>
               {playerCount % 2 !== 0 ? null : (
                 <View style={styles.partnerSection}>
-                  <Text style={styles.partnerSectionText}>Partners ?</Text>
+                  <Text style={styles.partnerSectionText}>
+                    {' '}
+                    {t('InformationScreen.Partners')}
+                  </Text>
                   <TouchableOpacity onPress={() => changePartners()}>
                     {isPartners ? (
                       <IconCheckboxChecked />
@@ -100,7 +107,9 @@ const InformationScreen = ({navigation}) => {
             <TouchableOpacity
               style={styles.nextButton}
               onPress={() => navigation.push('Score')}>
-              <Text style={styles.nextButtonText}>Next</Text>
+              <Text style={styles.nextButtonText}>
+                {t('InformationScreen.Next')}
+              </Text>
               <IconArrowRight />
             </TouchableOpacity>
             {settingsModal ? (

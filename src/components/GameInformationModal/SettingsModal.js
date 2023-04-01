@@ -10,6 +10,7 @@ import React, {useContext, useState} from 'react';
 import styles from './SettingsModal.style';
 import {IconArrowDown, IconArrowUp, IconClose} from '../../assets/icons';
 import {ScoreContext} from '../../context/scoreContext';
+import {useTranslation} from 'react-i18next';
 const bg = require('../../assets/images/backgroundGameInformation.png');
 
 const SettingsModal = ({visible, onClose}) => {
@@ -21,6 +22,8 @@ const SettingsModal = ({visible, onClose}) => {
   } = useContext(ScoreContext);
 
   const [count, setCount] = useState(playerCount);
+
+  const {t} = useTranslation();
 
   return (
     <ScoreContext.Consumer>
@@ -45,7 +48,9 @@ const SettingsModal = ({visible, onClose}) => {
                       <IconClose />
                     </TouchableOpacity>
                     <View style={styles.contentRow}>
-                      <Text style={styles.text}>Player Count: </Text>
+                      <Text style={styles.text}>
+                        {t('InformationScreen.PlayerCount')}:{' '}
+                      </Text>
                       <Text style={[styles.playerCountInput, styles.text]}>
                         {count}
                       </Text>
@@ -87,7 +92,7 @@ const SettingsModal = ({visible, onClose}) => {
                               highestScoreWins ? null : styles.unSelectedBox,
                             ]}
                             onPress={() => setHighestScoreWins(true)}>
-                            Highest
+                            {t('InformationScreen.Highest')}
                           </Text>
                         </TouchableOpacity>
                         <TouchableOpacity
@@ -101,12 +106,12 @@ const SettingsModal = ({visible, onClose}) => {
                               styles.text,
                               highestScoreWins ? styles.unSelectedBox : null,
                             ]}>
-                            Lowest
+                            {t('InformationScreen.Lowest')}
                           </Text>
                         </TouchableOpacity>
                       </View>
                       <Text style={[styles.text, styles.scoreText]}>
-                        score should win the game.
+                        {t('InformationScreen.ShouldWin')}
                       </Text>
                     </View>
                   </View>

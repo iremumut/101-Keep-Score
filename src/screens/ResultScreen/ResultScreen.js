@@ -4,12 +4,15 @@ import styles from './ResultScreen.style';
 import BackgroundContainer from '../../components/BackgroundContainer/BackgroundContainer';
 import uuid from 'react-native-uuid';
 import {ScoreContext} from '../../context/scoreContext';
+import {useTranslation} from 'react-i18next';
 
 const bg = require('../../assets/images/backgroundResult.png');
 const trophy = require('../../assets/images/trophy.png');
 
 const ResultScreen = ({navigation}) => {
   const {winners, clearWinners} = useContext(ScoreContext);
+
+  const {t} = useTranslation();
 
   useEffect(() => {
     navigation.addListener('beforeRemove', e => {
@@ -26,7 +29,7 @@ const ResultScreen = ({navigation}) => {
           <View style={styles.container}>
             <View style={styles.titleContainer}>
               <View style={styles.titleCircle} />
-              <Text style={styles.title}>Winner</Text>
+              <Text style={styles.title}>{t('ResultScreen.Winner')}</Text>
             </View>
             <View style={styles.winnerSection}>
               <Image source={trophy} style={styles.winnerIcon} />
@@ -67,7 +70,9 @@ const ResultScreen = ({navigation}) => {
                 clearWinners();
                 navigation.navigate('Information');
               }}>
-              <Text style={styles.newGameButtonText}>New Game</Text>
+              <Text style={styles.newGameButtonText}>
+                {t('ResultScreen.NewGame')}
+              </Text>
             </TouchableOpacity>
           </View>
         </BackgroundContainer>

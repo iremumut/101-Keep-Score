@@ -11,8 +11,11 @@ import styles from './EnterScoreModal.style';
 import {ScoreContext} from '../../context/scoreContext';
 import ScoreInput from '../ScoreInput/ScoreInput';
 import {IconClose} from '../../assets/icons';
+import {useTranslation} from 'react-i18next';
 
 const EnterScoreModal = ({visible, close}) => {
+  const {t} = useTranslation();
+
   const {playerNames, playerCount, addScores} = useContext(ScoreContext);
 
   const [scores, setScores] = useState(Array(playerCount).fill(0));
@@ -68,7 +71,7 @@ const EnterScoreModal = ({visible, close}) => {
                     close();
                     addScores(scores);
                   }}>
-                  <Text style={styles.buttonText}>Save</Text>
+                  <Text style={styles.buttonText}>{t('ScoreScreen.Save')}</Text>
                 </TouchableOpacity>
               </View>
             </Modal>

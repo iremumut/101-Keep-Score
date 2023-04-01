@@ -40,7 +40,7 @@ export default styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignSelf: 'center',
-    marginVertical: '5%',
+    marginVertical: '3%',
     alignItems: 'center',
   },
   resultText: {

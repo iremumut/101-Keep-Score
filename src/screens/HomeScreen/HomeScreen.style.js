@@ -49,4 +49,17 @@ export default styles = StyleSheet.create({
     width: '100%',
     flex: 0.8,
   },
+  languageText: {
+    color: AppStyles.color.white,
+    fontFamily: 'ReadexPro-Regular',
+    fontStyle: 'normal',
+    fontWeight: '400',
+    fontSize: 18,
+    letterSpacing: 0.5,
+    textAlign: 'right',
+  },
+  languageButton: {
+    width: '85%',
+    top: '2%',
+  },
 });
