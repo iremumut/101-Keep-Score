@@ -23,7 +23,8 @@ const PlayerNameInput = ({initialName, playerNumber}) => {
             value={name}
             onChangeText={e => setName(e)}
             onEndEditing={() => {
-              if (name.length !== 0) {
+              const trimedName = name.trim();
+              if (trimedName.length !== 0) {
                 changePlayerName(playerNumber, name);
               } else {
                 setName(initialName);

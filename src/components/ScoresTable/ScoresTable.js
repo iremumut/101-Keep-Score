@@ -47,7 +47,7 @@ const ScoresTable = () => {
                       styles.playerNameText,
                       {flexBasis: 1 / playerNames.length},
                     ]}>
-                    {item.length > 9 ? item.slice(0, 6) + '..' : item}
+                    {item.length > 9 ? item.slice(0, 7) + '..' : item}
                   </Text>
                 );
               }}

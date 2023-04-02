@@ -28,6 +28,7 @@ export const ContextProvider = props => {
       names.push(`Player #${i}`);
     }
     setPlayerNames(names);
+    setScores([]);
   };
 
   const changePlayerName = (playerNumber, name) => {

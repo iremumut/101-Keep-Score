@@ -26,7 +26,7 @@ export default styles = StyleSheet.create({
     fontSize: 14,
     letterSpacing: 0.01,
     marginHorizontal: 2,
-    width: 75,
+    width: 74,
   },
   firstText: {
     marginLeft: 0,

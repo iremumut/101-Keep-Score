@@ -31,10 +31,10 @@ export default styles = StyleSheet.create({
     color: AppStyles.color.white,
     fontFamily: 'ReadexPro-SemiBold',
     fontWeight: '600',
-    fontSize: 14,
+    fontSize: 12,
     letterSpacing: 0.01,
     marginHorizontal: 2,
-    width: 75,
+    width: 74,
   },
   rowContainer: {
     flex: 1,

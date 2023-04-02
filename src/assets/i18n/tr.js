@@ -2,7 +2,7 @@ const tr = {
   translation: {
     HomeScreen: {
       Start: 'BAŞLA',
-      Title: '101 Skor Tut',
+      Title: '101\nSkor\nTut',
       Language: 'TR',
     },
     InformationScreen: {

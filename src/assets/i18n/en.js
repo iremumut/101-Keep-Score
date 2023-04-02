@@ -2,7 +2,7 @@ const en = {
   translation: {
     HomeScreen: {
       Start: 'START',
-      Title: '101 Keep Score',
+      Title: '101\nKeep\nScore',
       Language: 'EN',
     },
     InformationScreen: {

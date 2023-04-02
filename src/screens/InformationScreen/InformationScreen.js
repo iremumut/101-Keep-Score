@@ -72,9 +72,8 @@ const InformationScreen = ({navigation}) => {
                 {!isPartners ? (
                   <FlatList
                     data={[...playerNames]}
-                    scrollEnabled
+                    removeClippedSubviews={false}
                     keyExtractor={(item, index) => index.toString()}
-                    scrollToOverflowEnabled
                     renderItem={x => (
                       <PlayerNameInput
                         initialName={x.item}
@@ -86,7 +85,7 @@ const InformationScreen = ({navigation}) => {
                   <FlatList
                     data={partnerNameList}
                     keyExtractor={(item, index) => index.toString()}
-                    scrollEnabled={false}
+                    removeClippedSubviews={false}
                     renderItem={({item}) => (
                       <View style={styles.partnersInputsList}>
                         <PlayerNameInput

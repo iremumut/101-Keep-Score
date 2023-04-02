@@ -14,7 +14,7 @@ export default styles = StyleSheet.create({
     color: AppStyles.color.white,
     marginTop: '20%',
     letterSpacing: 0.1,
-    paddingHorizontal: '25%',
+    alignSelf: 'center',
   },
   startButton: {
     position: 'absolute',

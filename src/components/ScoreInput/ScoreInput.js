@@ -4,12 +4,12 @@ import styles from './ScoreInput.style';
 import {TouchableWithoutFeedback, Keyboard} from 'react-native';
 
 const ScoreInput = ({name, index, score, saveScore}) => {
-  const [newScore, setNewScore] = useState(score);
+  const [newScore, setNewScore] = useState('');
 
   return (
     <View style={styles.playerContainer}>
       <Text style={styles.playerName}>
-        {name.length > 8 ? name.slice(0, 8).trim() + '..' : name}
+        {name.length > 9 ? name.slice(0, 7).trim() + '..' : name}
       </Text>
 
       <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
@@ -17,6 +17,8 @@ const ScoreInput = ({name, index, score, saveScore}) => {
           style={styles.playerInput}
           keyboardType="numeric"
           value={newScore}
+          placeholder="0"
+          placeholderTextColor="#FFF"
           onTouchCancel={() => saveScore(newScore, index)}
           onChangeText={e => {
             if (e.startsWith(0) && e.length !== 1) {

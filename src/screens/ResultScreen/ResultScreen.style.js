@@ -40,7 +40,7 @@ export default styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignSelf: 'center',
-    marginVertical: '3%',
+    marginVertical: '1%',
     alignItems: 'center',
   },
   resultText: {
@@ -74,7 +74,7 @@ export default styles = StyleSheet.create({
     borderRadius: 40,
     position: 'absolute',
     alignSelf: 'center',
-    bottom: '10%',
+    bottom: '5%',
     alignItems: 'center',
   },
   newGameButtonText: {

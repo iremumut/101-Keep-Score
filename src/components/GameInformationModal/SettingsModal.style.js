@@ -61,7 +61,7 @@ export default styles = StyleSheet.create({
     marginVertical: 3,
   },
   scoreText: {
-    width: '80%',
+    width: '60%',
     marginHorizontal: '10%',
   },
   unSelectedBox: {

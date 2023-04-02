@@ -3,14 +3,14 @@ import {StyleSheet} from 'react-native';
 export default styles = StyleSheet.create({
   playerContainer: {
     marginHorizontal: 2,
-    width: 80,
+    width: 75,
   },
   playerName: {
     textAlign: 'center',
     color: AppStyles.color.white,
     fontFamily: 'ReadexPro-SemiBold',
     fontWeight: '600',
-    fontSize: 14,
+    fontSize: 12,
     letterSpacing: 0.01,
   },
   playerInput: {
