@@ -23,7 +23,9 @@ const TableRow = ({rowNumber, scores, rightSideScrollAmount, index}) => {
       {() => (
         <View>
           <View style={styles.rowContainer}>
-            <Text style={styles.rowNumber}>{rowNumber}</Text>
+            <View style={styles.rowNumberContainer}>
+              <Text style={styles.rowNumber}>{rowNumber}</Text>
+            </View>
             <View style={styles.rowScores}>
               <FlatList
                 data={scores}

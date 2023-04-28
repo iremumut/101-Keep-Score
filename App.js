@@ -21,7 +21,11 @@ function App() {
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Information" component={InformationScreen} />
           <Stack.Screen name="Score" component={ScoreScreen} />
-          <Stack.Screen name="Result" component={ResultScreen} />
+          <Stack.Screen
+            name="Result"
+            component={ResultScreen}
+            options={{gestureEnabled: false}}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </ContextProvider>

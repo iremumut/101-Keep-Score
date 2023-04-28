@@ -12,10 +12,12 @@ export default styles = StyleSheet.create({
   rowNumber: {
     color: AppStyles.color.white,
     fontSize: 14,
+    textAlign: 'center',
+  },
+  rowNumberContainer: {
     backgroundColor: AppStyles.color.pink,
     width: 22,
     height: 22,
-    textAlign: 'center',
     borderRadius: 50,
   },
   scoreText: {
