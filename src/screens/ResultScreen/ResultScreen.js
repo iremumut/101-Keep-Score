@@ -16,7 +16,6 @@ const ResultScreen = ({navigation}) => {
 
   useEffect(() => {
     navigation.addListener('beforeRemove', e => {
-      console.log(e.data.action.type);
       if (e.data.action.type === 'GO_BACK' || e.data.action.type === 'POP') {
         e.preventDefault();
       }
