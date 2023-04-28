@@ -1,5 +1,5 @@
 import {View} from 'react-native';
-import React, {useContext, useState, useEffect} from 'react';
+import React, {useContext, useState} from 'react';
 import styles from './PlayerNameInput.style';
 import {TextInput} from 'react-native';
 import {ScoreContext} from '../../context/scoreContext';
@@ -7,11 +7,7 @@ import {ScoreContext} from '../../context/scoreContext';
 const PlayerNameInput = ({initialName, playerNumber}) => {
   const {changePlayerName} = useContext(ScoreContext);
 
-  const [name, setName] = useState(initialName);
-
-  useEffect(() => {
-    setName(initialName);
-  }, [initialName]);
+  const [name, setName] = useState('');
 
   return (
     <ScoreContext.Consumer>
@@ -19,8 +15,10 @@ const PlayerNameInput = ({initialName, playerNumber}) => {
         <View style={styles.InputContainer}>
           <TextInput
             style={styles.InputText}
+            placeholderTextColor={'white'}
             keyboardDismissMode="none"
             value={name}
+            placeholder={initialName}
             onChangeText={e => setName(e)}
             onEndEditing={() => {
               const trimedName = name.trim();

@@ -1,4 +1,4 @@
-import {Text, View, FlatList, TouchableOpacity, ScrollView} from 'react-native';
+import {Text, View, FlatList, TouchableOpacity} from 'react-native';
 import React, {useState, useContext, useEffect} from 'react';
 import styles from './InformationScreen.style';
 import {
@@ -36,6 +36,7 @@ const InformationScreen = ({navigation}) => {
       }
       setPartnerNameList(names);
     }
+    // eslint-disable-next-line
   }, [isPartners, playerNames]);
 
   return (
